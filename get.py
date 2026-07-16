@@ -41,7 +41,6 @@ def convert_json_to_dataframe(json_response: dict):
     event_list = []
 
     for event in json_response: 
-
         cleaned_event = parse_event(event=event)
         event_list.append(cleaned_event)
 
