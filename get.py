@@ -51,9 +51,7 @@ def convert_json_to_dataframe(json_response: dict):
 if __name__ == "__main__":
 
     response = requests.get(url=url, params=params, timeout=10)
-
     json_response = convert_response_to_json(response)
-
     result = convert_json_to_dataframe(json_response=json_response)
 
     print(result)
