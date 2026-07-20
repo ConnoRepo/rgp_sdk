@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 from datetime import datetime
 
 url = "https://app.rockgympro.com/b/widget/"
@@ -22,11 +21,11 @@ def convert_response_to_json(raw_response):
 def parse_event(event: dict):
 
     title_soup = BeautifulSoup(event["title"], "html.parser").get_text()
-    start_soup = BeautifulSoup(event["start"], "html.parser").get_text()
-    end_soup   = BeautifulSoup(event["end"], "html.parser").get_text()
+    start_time = datetime.fromisoformat(event["start"])
+    end_time   = datetime.fromisoformat(event["end"])
 
-    start_time = datetime.fromisoformat(start_soup)
-    end_time   = datetime.fromisoformat(end_soup)
+    print(start_time)
+    print(end_time)
 
     cleaned_map = {
         "title" : title_soup,
@@ -36,7 +35,7 @@ def parse_event(event: dict):
 
     return cleaned_map
 
-def convert_json_to_dataframe(json_response: dict):
+def cleaned_event_list(json_response: dict):
 
     event_list = []
 
@@ -44,14 +43,12 @@ def convert_json_to_dataframe(json_response: dict):
         cleaned_event = parse_event(event=event)
         event_list.append(cleaned_event)
 
-    df = pd.DataFrame(event_list)
-
-    return df
+    return event_list
 
 if __name__ == "__main__":
 
     response = requests.get(url=url, params=params, timeout=10)
     json_response = convert_response_to_json(response)
-    result = convert_json_to_dataframe(json_response=json_response)
+    all_events = cleaned_event_list(json_response)
 
-    print(result)
+    print(all_events)
