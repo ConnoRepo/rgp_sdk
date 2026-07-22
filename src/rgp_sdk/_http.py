@@ -16,14 +16,14 @@ class Connection:
         
     def handler(self, response):
         if response == 200:
-            return response.json()
+            raise response.json()
         elif response == 400:
-            return "400: Bad Request"
+            raise AttributeError(f"{response}: Bad Request")
         elif response == 401:
-            return "401: Unauthorized"
+            raise AttributeError(f"{response}: Unauthorized")
         elif response == 404:
-            return "404: Not Found"
+            raise AttributeError(f"{response}: Not Found")
         elif response == 422:
-            return "422: Input validation failed"
+            raise AttributeError(f"{response}: Input validation failed")
 
         
