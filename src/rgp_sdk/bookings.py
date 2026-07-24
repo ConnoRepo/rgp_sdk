@@ -14,4 +14,7 @@ class Bookings:
         self._conn = conn
 
     def get_facility_bookings(self, facilityCode, **filters : Unpack[ValidBookingFilters]):
-        
+        return self._conn.get(path=f"bookings/facility/{facilityCode}", params=filters)
+
+    def get_specific_booking_info(self, facilityCode, bookingId):
+        return self._conn.get(path=f"bookings/facility/{facilityCode}/{bookingId}")
