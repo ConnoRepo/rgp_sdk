@@ -7,6 +7,7 @@ from check_ins import CheckIn
 from facilities import Facilities
 from invoices import Invoices
 from ping import Ping
+from settings import Settings
 
 class RGP:
 
@@ -20,3 +21,4 @@ class RGP:
         self.facilities = Facilities(self._conn)
         self.invoices = Invoices(self._conn)
         self.ping = Ping(self._conn)
+        self.settings = Settings(self._conn)
