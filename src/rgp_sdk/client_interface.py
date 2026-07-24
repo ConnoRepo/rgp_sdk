@@ -5,6 +5,7 @@ from sales import Sales
 from bookings import Bookings
 from check_ins import CheckIn
 from facilities import Facilities
+from invoices import Invoices
 
 class rgp:
 
@@ -16,3 +17,4 @@ class rgp:
         self.bookings = Bookings(self._conn)
         self.check_ins = CheckIn(self._conn)
         self.facilities = Facilities(self._conn)
+        self.invoices = Invoices(self._conn)
