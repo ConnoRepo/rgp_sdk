@@ -38,7 +38,7 @@ class Customer:
     def single_customer(self, customer_guid):
         return self._conn.get(path="customers/", params=customer_guid)
 
-    def  any_customers(self, customer_guid_list):
+    def any_customers(self, customer_guid_list):
         return self._conn.get(path="customers/", params=customer_guid_list) 
     
     def filtered_customers(self, facility_code, **filters: Unpack[ValidCustomerFilters]):
