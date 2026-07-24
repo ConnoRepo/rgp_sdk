@@ -1,4 +1,4 @@
-from typing import Unpack, TypedDict, Literal
+from typing import Unpack, TypedDict
 
 class ValidDailyFilters(TypedDict, total=False):
     startDate : str
