@@ -23,3 +23,4 @@ class RGP:
         self.invoices = Invoices(self._conn)
         self.ping = Ping(self._conn)
         self.settings = Settings(self._conn)
+        self.versions = Versions(self._conn)
