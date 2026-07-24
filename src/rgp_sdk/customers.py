@@ -35,8 +35,8 @@ class Customer:
     def __init__(self, conn):
         self._conn = conn
 
-    def single_customer(self, customer_guid):
-        return self._conn.get(path="customers/", params=customer_guid)
+    def single_customer(self, customerGuid):
+        return self._conn.get(path=f"customers/{customerGuid}")
 
     def any_customers(self, customer_guid_list):
         return self._conn.get(path="customers/", params=customer_guid_list) 
