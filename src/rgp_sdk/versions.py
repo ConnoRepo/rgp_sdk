@@ -11,7 +11,7 @@ class Versions:
                 "facilities" : facility
             }
 
-        return self._conn.get(path="/versions", params=facility)
+        return self._conn.get(path="versions", params=facility)
 
     def facility_version(self, facilityCode):
         return self._conn.get(path=f"versions/facility/{facilityCode}")

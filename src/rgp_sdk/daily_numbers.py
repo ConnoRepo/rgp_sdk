@@ -13,4 +13,4 @@ class DailyNumbers:
         self._conn = conn
 
     def get_daily_numbers(self, facilityCode, **filters : Unpack[ValidDailyFilters]): 
-        return self._conn.get(path=f"/dailynumbers/facility/{facilityCode}", params=filters)
+        return self._conn.get(path=f"dailynumbers/facility/{facilityCode}", params=filters)
