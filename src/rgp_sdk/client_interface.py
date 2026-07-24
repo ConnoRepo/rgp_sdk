@@ -1,17 +1,17 @@
-from _http import Connection
-from customers import Customer
-from daily_numbers import DailyNumbers
-from sales import Sales
-from bookings import Bookings
-from check_ins import CheckIn
-from facilities import Facilities
-from invoices import Invoices
-from ping import Ping
-from settings import Settings
-from versions import Versions
-from staff import Staff
-from timeclocks import Timeclock
-from widgets import Widgets
+from ._http import Connection
+from .customers import Customer
+from .daily_numbers import DailyNumbers
+from .sales import Sales
+from .bookings import Bookings
+from .check_ins import CheckIn
+from .facilities import Facilities
+from .invoices import Invoices
+from .ping import Ping
+from .settings import Settings
+from .versions import Versions
+from .staff import Staff
+from .timeclocks import Timeclock
+from .widgets import Widgets
 
 class RGP:
 
