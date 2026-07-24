@@ -1,6 +1,6 @@
 from typing import TypedDict, Unpack
 
-class ValidSalesFilters:
+class ValidSalesFilters(TypedDict, total=False):
     startId : int
     productId : int
     startDateTime : str
