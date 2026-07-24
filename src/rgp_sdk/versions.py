@@ -14,4 +14,4 @@ class Versions:
         return self._conn.get(path="/v1/versions", params=facility)
 
     def facility_version(self, facilityCode):
-        return self._conn.get(path=f"v1/versions/facility/{facilityCode}", params=None)
+        return self._conn.get(path=f"v1/versions/facility/{facilityCode}")

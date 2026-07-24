@@ -10,7 +10,7 @@ class Connection:
         # setting up http basic auth
         self._session.auth = (username, api_key)
 
-    def get(self, path, params):
+    def get(self, path, params=None):
         response = self._session.get(url=f"{self.base_url}/{path}", params=params)
         return self.handler(response=response)
         
