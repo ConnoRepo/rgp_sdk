@@ -9,6 +9,7 @@ from invoices import Invoices
 from ping import Ping
 from settings import Settings
 from versions import Versions
+from staff import Staff
 
 class RGP:
 
@@ -24,3 +25,4 @@ class RGP:
         self.ping = Ping(self._conn)
         self.settings = Settings(self._conn)
         self.versions = Versions(self._conn)
+        self.staff = Staff(self._conn)
