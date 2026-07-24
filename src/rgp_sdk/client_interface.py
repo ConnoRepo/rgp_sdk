@@ -11,6 +11,7 @@ from settings import Settings
 from versions import Versions
 from staff import Staff
 from timeclocks import Timeclock
+from widgets import Widgets
 
 class RGP:
 
@@ -28,3 +29,4 @@ class RGP:
         self.versions = Versions(self._conn)
         self.staff = Staff(self._conn)
         self.timeclock = Timeclock(self._conn)
+        self.widgets = Widgets(self._conn)
