@@ -2,6 +2,7 @@ from _http import Connection
 from customers import Customer
 from daily_numbers import DailyNumbers
 from sales import Sales
+from bookings import Bookings
 
 class rgp:
 
@@ -10,3 +11,4 @@ class rgp:
         self.customer = Customer(self._conn)
         self.daily_numbers = DailyNumbers(self._conn)
         self.sales = Sales(self._conn)
+        self.bookings = Bookings(self._conn)
