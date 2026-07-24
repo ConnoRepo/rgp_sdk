@@ -22,4 +22,4 @@ class Settings:
         return self._conn.get(path="v1/settings", params=params)
 
     def facility_settings(self, facilityCode): 
-        return self._conn(path=f"v1/settings/facility/{facilityCode}")
+        return self._conn.get(path=f"v1/settings/facility/{facilityCode}")
