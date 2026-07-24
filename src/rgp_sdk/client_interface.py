@@ -6,8 +6,9 @@ from bookings import Bookings
 from check_ins import CheckIn
 from facilities import Facilities
 from invoices import Invoices
+from ping import Ping
 
-class rgp:
+class RGP:
 
     def __init__(self, username, api_key):
         self._conn = Connection(username, api_key)
@@ -18,3 +19,4 @@ class rgp:
         self.check_ins = CheckIn(self._conn)
         self.facilities = Facilities(self._conn)
         self.invoices = Invoices(self._conn)
+        self.ping = Ping(self._conn)
