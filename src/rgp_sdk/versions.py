@@ -10,6 +10,8 @@ class Versions:
             params = {
                 "facility" : facility
             }
+        else:
+            params = {}
 
         return self._conn.get(path="versions", params=params)
 
