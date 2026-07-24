@@ -1,7 +1,7 @@
 from typing import TypedDict, Unpack
 
 class ValidSalesFilters:
-    starId : int
+    startId : int
     productId : int
     startDateTime : str
     endDateTime : str
