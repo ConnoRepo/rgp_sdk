@@ -8,6 +8,7 @@ from facilities import Facilities
 from invoices import Invoices
 from ping import Ping
 from settings import Settings
+from versions import Versions
 
 class RGP:
 
