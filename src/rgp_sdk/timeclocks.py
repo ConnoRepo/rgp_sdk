@@ -8,13 +8,13 @@ class ValidTimeclockFilters(TypedDict, total=False):
     limit : int
     page : int
 
-class Timeclock:
+class Timeclocks:
 
     def __init__(self, conn):
         self._conn = conn
 
     def get_all_facility_timeclock_entries(self, facilityCode, **filters : Unpack[ValidTimeclockFilters]):
-        return self._conn.get(path=f"v1/timeclocks/facility/{facilityCode}", params=filters)
+        return self._conn.get(path=f"timeclocks/facility/{facilityCode}", params=filters)
 
     def get_timeclock_details(self, facilityCode, timeclockId):
-        return self._conn.get(path=f"v1/timeclocks/facility/{facilityCode}/{timeclockId}")
+        return self._conn.get(path=f"timeclocks/facility/{facilityCode}/{timeclockId}")

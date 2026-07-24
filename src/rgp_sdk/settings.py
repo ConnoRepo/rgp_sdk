@@ -3,23 +3,18 @@ class Settings:
     def __init__(self, conn):
         self._conn = conn
 
-    def single_setting(self, name, facility=None):
+    def single_setting(self, setting_name, facility_codes=None):
 
-        if name is None:
+        if setting_name is None:
             raise ValueError("Name is a required parameter")
 
-        if name and facility is not None: 
+        params = {"setting_name" : setting_name}
 
-            # keys will need to be changed to values that api will accept 
-            # TBD during testing
-            params = {
-                "setting_name" : name,
-                "facility_codes" : facility
-            }
-        else:
-            params = None 
+        # need to write and then use a helper function that will unpack list and make the comma seperated values here and other places
+        if facility_codes is not None:
+            params["facility_codes"] = facility_codes
 
-        return self._conn.get(path="v1/settings", params=params)
+        return self._conn.get(path="settings", params=params)
 
     def facility_settings(self, facilityCode): 
-        return self._conn(path=f"v1/settings/facility/{facilityCode}", params=None)
+        return self._conn.get(path=f"settings/facility/{facilityCode}")

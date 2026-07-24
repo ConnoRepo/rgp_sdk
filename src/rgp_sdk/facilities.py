@@ -4,4 +4,4 @@ class Facilities:
         self._conn = conn
 
     def get_facilities(self):
-        return self._conn.get(path="facilities", params=None)
+        return self._conn.get(path="facilities")

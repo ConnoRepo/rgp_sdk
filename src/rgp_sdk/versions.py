@@ -7,11 +7,13 @@ class Versions:
         if facility:
 
             # this will need to be adjusted depending on what the api is looking for
-            facility = {
-                "facilities" : facility
+            params = {
+                "facility" : facility
             }
+        else:
+            params = {}
 
-        return self._conn.get(path="/v1/versions", params=facility)
+        return self._conn.get(path="versions", params=params)
 
     def facility_version(self, facilityCode):
-        return self._conn.get(path=f"v1/versions/facility/{facilityCode}", params=None)
+        return self._conn.get(path=f"versions/facility/{facilityCode}")

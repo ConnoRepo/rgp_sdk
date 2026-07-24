@@ -30,16 +30,16 @@ class ValidCustomerFilters(TypedDict, total=False):
     limit: int                          # 10-200, default 100
     page: int                           # >= 1, default 1
 
-class Customer:
+class Customers:
 
     def __init__(self, conn):
         self._conn = conn
 
-    def single_customer(self, customer_guid):
-        return self._conn.get(path="customers/", params=customer_guid)
+    def single_customer(self, customerGuid):
+        return self._conn.get(path=f"customers/{customerGuid}")
 
-    def  any_customers(self, customer_guid_list):
-        return self._conn.get(path="customers/", params=customer_guid_list) 
+    def any_customers(self, customerGuidList):
+        return self._conn.get(path="customers/", params=customerGuidList) 
     
-    def filtered_customers(self, facility_code, **filters: Unpack[ValidCustomerFilters]):
-        return self._conn.get(path=f"customers/facility/{facility_code}", params=filters)
+    def filtered_customers(self, facilityCode, **filters: Unpack[ValidCustomerFilters]):
+        return self._conn.get(path=f"customers/facility/{facilityCode}", params=filters)
