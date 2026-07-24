@@ -13,7 +13,7 @@ class Widgets:
         self._conn = conn
 
     def get_facilityJ_widget_guids(self, facilityCode, **filters : Unpack[ValidWidgetFilters]):
-        return self._conn.get(path=f"widgets/events/facility/{facilityCode}", params=filters)\
+        return self._conn.get(path=f"widgets/events/facility/{facilityCode}", params=filters)
 
     def get_events_from_facility_guid(self, facilityCode, eventWidgetGuid, startDateTime, endDateTime):
 

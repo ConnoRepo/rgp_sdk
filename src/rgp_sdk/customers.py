@@ -30,7 +30,7 @@ class ValidCustomerFilters(TypedDict, total=False):
     limit: int                          # 10-200, default 100
     page: int                           # >= 1, default 1
 
-class Customer:
+class Customers:
 
     def __init__(self, conn):
         self._conn = conn

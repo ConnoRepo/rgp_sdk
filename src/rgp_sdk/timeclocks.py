@@ -8,7 +8,7 @@ class ValidTimeclockFilters(TypedDict, total=False):
     limit : int
     page : int
 
-class Timeclock:
+class Timeclocks:
 
     def __init__(self, conn):
         self._conn = conn
