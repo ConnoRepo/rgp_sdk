@@ -4,7 +4,7 @@ from daily_numbers import DailyNumbers
 from sales import Sales
 from bookings import Bookings
 from check_ins import CheckIn
-
+from facilities import Facilities
 
 class rgp:
 
@@ -15,3 +15,4 @@ class rgp:
         self.sales = Sales(self._conn)
         self.bookings = Bookings(self._conn)
         self.check_ins = CheckIn(self._conn)
+        self.facilities = Facilities(self._conn)
