@@ -11,4 +11,4 @@ class Staff:
         self._conn = conn
 
     def get_staff_records(self, **filters : Unpack[ValidStaffFilters]):
-        return self._conn.get(path="v1/staff", params=filters)
+        return self._conn.get(path="staff", params=filters)

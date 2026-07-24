@@ -2,7 +2,7 @@ import requests
 
 class Connection:
     def __init__(self, username, api_key):
-        self.base_url = "https://api.rockgympro.com"
+        self.base_url = "https://api.rockgympro.com/v1"
 
         # starting a session for easy connection management
         self._session = requests.Session()  
